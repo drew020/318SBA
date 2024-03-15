@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.18.3",
+    "nodemon": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node ./src/api/app.js"
+  },
+  "name": "316sba",
+  "version": "1.0.0",
+  "main": "./src/api/app.js",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}

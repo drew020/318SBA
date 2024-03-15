@@ -1,0 +1,1 @@
+A game demo showcasing one feature, character creation in a text game style; implementing events and form validations and some DOM and BOM manupulation.

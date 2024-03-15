@@ -1,0 +1,320 @@
+/* 
+
+center the thing bomb
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+
+*/
+
+:root {
+  --main_color: rgb(0, 75, 116);
+  --accent_color: rgb(0, 217, 255);
+  --touch_color: rgb(0, 23, 36);
+  --text_color: rgba(255, 255, 255, 1);
+  --text_color_contrast: rgba(0, 0, 0, 1);
+
+  --main-bg: #94bfff;
+  --top-menu-bg: hsl(209, 63%, 23%);
+  --sub-menu-bg: rgb(30, 79, 126);
+
+  /* 
+  Shadow boxing edits
+   */
+  /*   --shadowbox_bound: 1px 1px 5px 32px;
+  --shadowbox_reach: 1px 1px 1px 1px;
+  --shadowbox_color: rgba(75, 36, 0, 0.32); */
+
+  /*   --box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+  --box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+* {
+  font-size: 18px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  /*   box-shadow: var(--shadowbox_color) var(--shadowbox_bound),
+    var(--shadowbox_color) var(--shadowbox_reach),
+    var(--shadowbox_color) var(--shadowbox_reach),
+    var(--shadowbox_color) var(--shadowbox_reach),
+    var(--shadowbox_color) var(--shadowbox_reach); */
+
+  box-shadow: var(--box-shadow);
+}
+
+title {
+  /* hides title since "*" gives it global attributes */
+  display: none;
+}
+
+html {
+  display: flex;
+  background-image: url(/316sba/src/Image/9d3152e904b671868e03bd7db926730a1aa025a5_2000x2000.webp);
+  background-repeat: round;
+  background-size: cover;
+  overflow: hidden;
+
+  /* 
+  force to just screen-space like a pro
+   */
+  height: 100vh;
+  /* 100% view height */
+  width: 100vw;
+  /* 100% view width */
+}
+
+header {
+  display: inline-block;
+  height: 6%;
+
+}
+
+body {
+  /* display: flex; */
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+footer {
+  display: flex; 
+/*   text-align: right;
+ */ 
+  box-shadow: none;
+  background-color: rgb(14, 44, 78);
+  height: 4vh; 
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center; 
+  padding: .5%
+
+/*   style="box-shadow: none; background-color: rgb(14, 44, 78);height: 100%; display: flex; justify-content: center; padding: .5%;"
+ */}
+
+main {
+  display: flex;
+  height: 90%;
+  padding: 2%;
+}
+
+section {
+  border: 1px solid white;
+  display: flex;
+}
+
+button {
+  padding: 1%;
+  margin: 2%;
+}
+
+img {
+  display: flex;
+
+  align-content: space-around;
+  justify-content: space-around;
+  /*   align-content: space-evenly;
+  justify-content: space-evenly;
+  align-self: space-evenly;
+  justify-self: space-evenly;
+  text-align: space-evenly;
+  text-justify: space-evenly; */
+}
+
+p {
+  text-align: center;
+  box-shadow: none;
+}
+
+table * {
+  text-align: center;
+  width: 50%;
+  color: rgb(255, 255, 255);
+  background-color: rgba(29, 28, 28, 0.363);
+}
+
+strong {
+  box-shadow: none;
+}
+
+#sec2_imageboard {
+  border: 1px solid;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-flow: row;
+  align-content: space-around;
+  justify-content: space-around;
+  height: 60%;
+  m
+}
+
+.sec2_titletext {
+  border: 1px solid white;
+  width: 33%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  position: fixed;
+  align-content: space-around;
+  justify-content: space-around;
+}
+
+.sec2_imagespan {
+  display: flex;
+  height: 100%;
+  border: 0.1px solid;
+  overflow: hidden;
+  align-content: space-around;
+  justify-content: space-around;
+}
+
+.sec2_image {
+  width: auto;
+  height: 80%;
+  aspect-ratio: 1/1;
+}
+
+/* #mc {
+}
+
+#npc {
+} */
+#sec3_dialoguebox {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  width: 100%;
+  height: 40%;
+}
+
+.dialogue_box {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.name_tag {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  height: 10%;
+}
+
+.dialogue_Text {
+  display: flex;
+  height: 100%;
+  box-shadow: none;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.sec3_dialoguebutton {
+  display: inline-flex;
+  flex: 0.25;
+  max-width: 300px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(/316sba/src/image/buttons1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sec3_dialoguebutton:hover {
+  background-image: url(/316sba/src/image/buttons2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sec3_buttonContain {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+
+  box-shadow: none;
+}
+
+.sec3_buttoncolumn {
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+}
+/* ------------------------------------------------------------------------- */
+#main_chat{
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  width: 100%;
+  height: 90%;
+}
+/* ------------------------------------------------------------------------- */
+
+nav a {
+  line-height: 3rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+nav a.active {
+  background-color: var(--sub-menu-bg);
+  color: var(--main-bg);
+}
+
+header,
+#top-menu {
+  position: relative;
+}
+
+#top-menu {
+  display: flex;
+  flex-flow: row;
+  z-index: 20;
+  text-align: center;
+}
+
+#top-menu a:hover {
+  background-color: var(--sub-menu-bg);
+}
+
+#sub-menu {
+  width: 100%;
+  z-index: 10;
+  transition: top 0.5s ease-out;
+}
+
+#sub-menu a:hover {
+  background-color: var(--sub-menu-bg);
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row;
+}
