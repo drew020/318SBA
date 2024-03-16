@@ -1,9 +1,13 @@
 const v_express = require(`express`);//using express module and cache as app
 const v_fs = require('fs').promises;
+const cors = require('cors');
+
+// Enable CORS for all routes
 
 const v_app = v_express();
 v_app.use(v_express.json());
 
+v_app.use(cors());
 
 const v_hostname = '127.0.0.1';
 //set port or if undefined set to 5000
@@ -14,8 +18,17 @@ const v_users = [
   {
     Index: 0,
     username: `Pragma`
-  },
+  }
 ];
+
+const v_chat = [
+  {
+    username: "Pragma",
+    message: "Hi!"
+  }
+];
+
+
 
 //#reigon HTTP Module
 // const http = require('http');
@@ -38,7 +51,14 @@ const logReq = function (req, res, next) {
 
 v_app.use(logReq);
 
+// Enable CORS for specific origins
+const corsOptions = {
+  origin: 'http://127.0.0.1:3000', // Allow requests from this origin
+  methods: ['GET', 'POST'], // Allow these HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
+};
 
+v_app.use(cors(corsOptions));
 //#endregion
 
 //#region ROUTES
@@ -48,11 +68,15 @@ v_app.get(`/`, (req, res) => {
 });
 
 v_app.get(`/api/`, (req, res) => {
-  res.send(`API requested`);
+  const l_data = {
+    users: v_users,
+    chat: v_chat
+  }
+  res.send( l_data);
 });
 
 v_app.get(`/api/users/`, (req, res) => {
-  res.send(`Users requested`);
+  res.send(`Users requested: ${v_users}`);
   //res.send(`Recieved a GET request for the users.`);
 });
 
@@ -78,9 +102,6 @@ v_app.post(`/api/users/`, (req, res) => {
     // 400 bad request 
     res.status(404).send(`The user with the given ID does not exist.`);
   }
-
-
-
   //res.send(`Recieved a POST request for the users: ${req.params.username}`);
 });
 
@@ -90,13 +111,45 @@ v_app.get(`/api/users/:username/`, (req, res) => {
   //res.send(`Navigated to the user page for ${req.params.username}.`);
 
   //404
-  if (!user) { res.status(404).send(`The user with the given ID does not exist.`); }
+  if (!user) {
+    res.status(404).send(`The user with the given ID does not exist.`);
+  }
   res.send(user);
 });
 
-v_app.post(`/api/users/:username/`, (req, res) => {
+v_app.get(`/api/users/:username/chat`, (res, req) => {
+  const l_user = v_users.find(object => object.username === req.params.username);
+  if (l_user) {
+  res.send(v_chat);
 
-  res.send(`Recieved a POST request for the users: ${req.params.username}`);
+  }
+  else{
+    res.status(404).send("Access to chat denied.");
+  }
+})
+
+v_app.post(`/api/users/:username/chat`, (req, res) => {
+  //const l_user = v_users.find(object => object.username === req.params.username);
+  const l_user = v_users.find(object => object.username === req.body.username);
+  if (l_user) {
+
+    const l_message =
+    {
+      username: req.body.username,
+      message: req.body.message
+    }
+
+    if (l_message.message) {
+      v_chat.push(l_message)
+      //res.send(l_message);
+      res.send(`Recieved a POST to chat request for the user: ${req.params.username}`);
+      return;
+    }
+  }
+  else {
+    res.status(404).send(`Nonexistent users can not send messages or empty messages.`);
+    return;
+  }
 });
 
 v_app.get(`/api/users/:username/account/`, (req, res) => {
