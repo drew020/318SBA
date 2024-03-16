@@ -9,7 +9,7 @@
   "name": "316sba",
   "version": "1.0.0",
   "main": "./src/api/app.js",
-  "author": "",
+  "author": "Andrew L. McClain",
   "license": "ISC",
   "keywords": [],
   "description": ""
