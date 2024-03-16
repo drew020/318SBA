@@ -49,7 +49,8 @@ v_app.get(`/api/`, (req, res) => {
 });
 
 v_app.get(`/api/users/`, (req, res) => {
-  res.send(`Recieved a GET request for the users.`);
+  res.send(v_users);
+  //res.send(`Recieved a GET request for the users.`);
 });
 v_app.post(`/api/users/`, (req, res) => {
   const user = {
