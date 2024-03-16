@@ -272,8 +272,8 @@ strong {
   align-content: space-around;
 }
 
-#chat_buttons_container{
-  display: flex;
+#chat_user_section{
+  display: block;
   flex-flow: row;
 
   width: 100%;
@@ -283,8 +283,24 @@ strong {
   align-content: center;
 
   justify-self: end;
-  justify-items: center;
-  justify-content: center;
+/*   justify-items: center;
+  justify-content: center; */
+
+}
+
+#chat_button_section{
+  display: block;
+  flex-flow: row;
+
+  width: 100%;
+
+  align-self: flex-end;
+  align-items: flex-end;
+  align-content: center;
+
+  justify-self: end;
+/*   justify-items: center;
+  justify-content: center; */
 
   box-shadow: none;
 }
@@ -357,8 +373,72 @@ flex: 87%;
 #userID{
   display: flex;
 }
+#chat_item_img{
+  height: 50px;
+  width: 50px;
+}
 
-#chat_user_container{
-  display: block;
-height:;
+#chat_box_section {
+  display: flex;
+  flex-direction: column-reverse; /* Reverse the order of items */
+  align-items: baseline; /* Align items to the end of the container */
+  justify-content: flex-start; /* Align items to the end of the container */
+  height: 90%; /* Maintain the height */
+  width: 100%;
+}
+
+#chat_item_container {
+  /* You might need to adjust styles based on your design */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px; /* Add some bottom margin for spacing */
+}
+#chat_item_img{
+
+}
+#chat_Item_usertag{
+  margin: 2%;
+  width: 5vw;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+
+
+}
+#chat_Item_message{
+margin: 2%;
+flex: 80%;
+width: 80vw;
+column-width: 80%;
+justify-content: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+
+}
+.chat_item{
+  display: table-cell;
+  padding: 8px;
+  text-align: left;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+}
+#chat_item_table{
+  height:min-content;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
 }

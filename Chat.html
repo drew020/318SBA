@@ -20,49 +20,17 @@
 
   <main id="main_chat">
 
-    <section id="chat_box">
+    <section id="chat_box_section">
     </section>
-
-
-    <section id="chat_user_container">
+    <section id="chat_user_section">
       <form>
-        <span id= "id_block">
-          <label id="userID"  for="userID">User ID: </label>
+        <span id="id_block">
+          <label id="userID" for="userID">User ID: </label>
         </span>
         <span id="id_input">
-          <input  type="text" id="userID"  name="userID"></input>
+          <input type="text" id="userID" name="userID"></input>
         </span>
       </form>
-    </section>
-
-    <section id="chat_button_container">
-      <div class="sec3_buttoncolumn">
-        <button class="sec3_dialoguebutton">
-          <strong>
-            <p>MENU</p>
-          </strong>
-        </button>
-        <button class="sec3_dialoguebutton">
-          <strong>
-            <p>SETTINGS</p>
-          </strong>
-        </button>
-      </div>
-      <div id="crystal_gif">
-        <img ; src="/318/318SBA/src/image/Xi5e.gif" alt="" />
-      </div>
-      <div class="sec3_buttoncolumn">
-        <button class="sec3_dialoguebutton">
-          <strong>
-            <p>ACTION</p>
-          </strong>
-        </button>
-        <button class="sec3_dialoguebutton" type="reset" onclick="location.href='/318SBA/create.html'">
-          <strong>
-            <p>POST</p>
-          </strong>
-        </button>
-      </div>
     </section>
   </main>
 
@@ -79,3 +47,24 @@
   <p class="dialogue_Text">
   </p>
 </div> -->
+<section id="chat_item_container">
+  <table id="chat_item_table">
+    <tr>
+      <td id="chat_item_usertag" class="chat_item">
+        <img id="chat_item_img" src="/318/318SBA/src/image/frame_3.png" alt="">
+        <p id="chat_Item_usertag">
+          <strong>
+            userID
+          </strong>
+        </p>
+      </td>
+      <td id="chat_Item_message" class="chat_item">
+        <p id="chat_Item_message">
+          HAY!! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio suscipit atque doloribus nulla nisi
+          hic cum et eligendi soluta quae ea voluptate excepturi ducimus, recusandae eaque! Porro tempore
+          veritatis reiciendis.
+        </p>
+      </td>
+    </tr>
+  </table>
+</section>
