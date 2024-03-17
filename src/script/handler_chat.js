@@ -55,9 +55,9 @@ const f_populate_chat = async () => {
 function f_createChatItem(l_username, l_message) {
     let l_clone = v_template.content.firstElementChild.cloneNode(true);
 
-    console.log(l_clone);
-
     l_clone.querySelector("#text").textContent = l_username;
+    l_clone.querySelector("#chat_Item_message").textContent = l_message;
+
     return l_clone;
 }
 
@@ -67,10 +67,36 @@ function f_clear() {
     }
 }
 
+function addEvents() {
+      a_Attribute_Element[i].addEventListener('input', stepEventInput);
+      console.log(`${a_Attribute_Element[i]} stepEventinput listening`)
+  }
+  
+  addEvents();
+  
+  function stepEventInput(event) {
+    let l_index = 0;
+    event.preventDefault();
+    // Which attribute index is it?
+    for (let i = 0; i > a_Attribute_Element.length; i++) {
+      if (event.target === a_Attribute_Element[i]) {
+        l_index = i;
+      }
+      console.log(`Detected ${a_Attribute_Element[i]} change`);
+    }
+    if (f_point.value >= 0 && Number(sumAttribute()) <= 40) {
+      f_point.value = 40 - sumAttribute();
+    }
+  
+    else if (f_point.value == 0) {
+      event.target.value--
+    }
+    console.log(`input event on ${event.target}`)
+  }
+
 
 function f_appendChat(element) {
 
-    // const activeItem = document.querySelector(".carousel-item.active");
     // if (!activeItem) element.classList.add("active");
 
     v_chat.appendChild(element);

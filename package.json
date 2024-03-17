@@ -5,11 +5,11 @@
     "nodemon": "^3.1.0"
   },
   "scripts": {
-    "start": "node ./src/api/app.js"
+    "start": "node server.js"
   },
-  "name": "316sba",
+  "name": "318sba",
   "version": "1.0.0",
-  "main": "./src/api/app.js",
+  "main": "server.js",
   "author": "Andrew L. McClain",
   "license": "ISC",
   "keywords": [],
