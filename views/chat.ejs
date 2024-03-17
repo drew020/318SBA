@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html id="chat" lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Chat</title>
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/image/Screenshot 2024-02-28 085546.png" />
+</head>
+
+<body>
+  <header>
+    <nav id="top-menu"></nav>
+    <!-- Add the <nav> element below -->
+    <nav id="sub-menu"></nav>
+  </header>
+
+  <main id="main_chat">
+
+    <section id="chat_box_section">
+    </section>
+    <section id="chat_user_section">
+      <form>
+        <span id="id_block">
+<!--           <label id="userID" for="userID">User Name: </label>-->
+          <input type="text" id="user_name" name="user_name" placeholder ="User Name" style="color: white; background-color: black;">
+        </span>
+        <span id="id_input">
+          <input type="text" id="user_input" name="user_input" placeholder ="--Type Message--"></input>
+        </span>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    CS STUDIO
+  </footer>
+<template id="chatItemTemplate">
+  <section id="chat_item_container">
+    <table id="chat_item_table">
+      <tr>
+        <td id="chat_item_usertag" class="chat_item">
+          <img id="chat_item_img" src="/image/frame_3.png" alt="">
+          <p id="chat_Item_usertag">
+            <strong id="text">
+              userID
+            </strong>
+          </p>
+        </td>
+        <td id="chat_Item_message" class="chat_item">
+          <p id="chat_Item_message">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio suscipit atque doloribus nulla nisi
+            hic cum et eligendi soluta quae ea voluptate excepturi ducimus, recusandae eaque! Porro tempore
+            veritatis reiciendis.
+          </p>
+        </td>
+      </tr>
+    </table>
+  </section>  
+  </template>
+</body>
+</html>
+
+<script src="/script/create_menu.js"></script>
+<script src="/script/handler_chat.js"></script>
+
+<!-- <div style="display: flex; overflow:hidden;">
+  <p class="name_tag" style="box-shadow: none; background-color: rgba(0, 0, 0, 0); margin-top: 1%;"><strong style="box-shadow: none; background-color: rgba(0, 0, 0, 0);">chat</strong></p>
+  <p class="dialogue_Text">
+  </p>
+</div> -->
+

@@ -85,7 +85,7 @@ function validateForm() {
     f_disabledNext.style.filter = "saturate(" + 1 + ")";
     f_disabledNext.removeAttribute('disabled');
 
-    window.open('/316SBA/prologue.html')//open a new window
+    //window.open('/316SBA/prologue.html')//open a new window
 
 
     alert("Character is created, please click NEXT");

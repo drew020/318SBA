@@ -61,7 +61,7 @@ title {
 
 html {
   display: flex;
-  background-image: url(/316sba/src/Image/9d3152e904b671868e03bd7db926730a1aa025a5_2000x2000.webp);
+  background-image: url(/image/9d3152e904b671868e03bd7db926730a1aa025a5_2000x2000.webp);
   background-repeat: round;
   background-size: cover;
   overflow: hidden;
@@ -73,6 +73,21 @@ html {
   /* 100% view height */
   width: 100vw;
   /* 100% view width */
+}
+
+#index{
+  display: flex;
+  background-image: url(/image/9d3152e904b671868e03bd7db926730a1aa025a5_2000x2000.webp);
+  background-repeat: round;
+  background-size: cover;
+  overflow: hidden;
+}
+#chat{
+  display: flex;
+  background-image: url(/image/1000_F_432303092_aTom2BcMOVqDmb2h6zgCDG6iBlbbs2PJ.png);
+  background-repeat: round;
+  background-size: cover;
+  overflow: hidden;
 }
 
 header {
@@ -231,14 +246,14 @@ strong {
   flex: 0.25;
   max-width: 300px;
   background-color: rgba(0, 0, 0, 0);
-  background-image: url(/316sba/src/image/buttons1.png);
+  background-image: url(/image/buttons1.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .sec3_dialoguebutton:hover {
-  background-image: url(/316sba/src/image/buttons2.png);
+  background-image: url(/image/buttons2.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

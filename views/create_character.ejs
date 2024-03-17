@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Labyrinth of the Alchemist’s Flask</title>
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/image/Screenshot 2024-02-28 085546.png" />
+</head>
+
+<body>
+  <header>
+    <nav id="top-menu"></nav>
+    <!-- Add the <nav> element below -->
+    <nav id="sub-menu"></nav>
+  </header>
+  <main>
+    <section id="sec2_imageboard">
+      <form style="display: flex; width: 100%; height: 100%;" name="myForm" action="/action_page.php"
+        onsubmit="return validateForm()" method="post">
+        <div style="display: inline-flex; flex: 0.5; width: 49%; height: 100%;">
+          <p style="border: 1px solid; display: block;">STATUS</p>
+          <table style="border: 1px solid; height: 95%;">
+            <tr>
+              <td></td>
+              <td>
+                <input type="button" value="Submit" onclick="validateForm()"/>
+              </td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>
+                <input type="text" name="fname" placeholder="" />
+              </td>
+            </tr>
+            <tr>
+              <td>Sex</td>
+              <td>
+                <select name="fsex">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Class</td>
+              <td>
+                <select name="fclass">
+                  <option value="male">Warrior</option>
+                  <option value="female">Mage</option>
+                  <option value="male">Scout</option>
+                  <option value="female">Priest</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Element</td>
+              <td>
+                <select name="fElement">
+                  <option value="fire">Fire</option>
+                  <option value="female">Mage</option>
+                  <option value="male">Scout</option>
+                  <option value="female">Priest</option>
+                </select>
+              </td>
+            </tr>
+            <tr style="display: none;">
+              <td><input type="submit" value="Submit" /></td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="display: inline-flex; flex: 0.5; width: 49%; height: 95%;">
+          <p style="border: 1px solid;">ATTRIBUTE</p>
+          <div style=" background-color: rgb(22, 22, 22);">
+            <p style="width: 30%;display:inline-flex;justify-content: center;">Attribute Points</p>
+            <input name="fpoint" class="sec3_dialoguebutton"
+              style="background-size:auto; width: 30%;display:inline-flex;text-align: center;" type="number"
+              value="40" readonly>
+            <button class="sec3_dialoguebutton" style="width: 30%;display:inline-flex;" type="button"
+              onclick="resetAttributePoints()"><strong>
+                <p>RESET</p>
+              </strong></button>
+          </div>
+          <div style =" height:88%;">
+           <table style="height: 100%;">
+            <tr>
+              <td>Strength</td>
+              <td>
+                <input type="number" name="fstrength" value=0 placeholder=10 min= 0 max= 99 />
+              </td>
+            </tr>
+            <tr>
+              <td>Intelligence</td>
+              <td>
+                <input type="number" name="fintelligence" value=0 placeholder=10 min= 0 max= 99 />
+              </td>
+            </tr>
+            <tr>
+              <td>Agility</td>
+              <td>
+                <input type="number" name="fagility" value=0 placeholder=10 min= 0 max= 99  />
+              </td>
+            </tr>
+            <tr>
+              <td>Wisdom</td>
+              <td>
+                <input type="number" name="fwisdom" value=0 placeholder=10 min= 0 max= 99/>
+              </td>
+            </tr>
+          </table> 
+          </div>
+          
+        </div>
+      </form>
+    </section>
+    <section id="sec3_dialoguebox">
+      <span class="dialogue_box">
+        <div>
+          <p style="display: none;" class="name_tag">
+            <strong>CHARACTER CREATION</strong>
+          </p>
+          <p class="dialogue_Text" style="display: none;"></p>
+        </div>
+        <div class="sec3_buttonContain" style="flex-flow: row wrap;">
+          <div class="sec3_buttoncolumn">
+            <button class="sec3_dialoguebutton">
+              <strong>
+                <p>MENU</p>
+              </strong>
+            </button>
+            <button class="sec3_dialoguebutton" onclick="sumAttribute()">
+              <strong>
+                <p>SETTINGS</p>
+              </strong>
+            </button>
+          </div>
+          <div style="
+                display: none;
+                align-content: space-around;
+                justify-content: center;
+              ">
+            <img style="
+                  max-height: 6vh;
+                       max-width: 6vw;
+                  border: none;
+                  box-shadow: none;
+                " src="/image/Xi5e.gif" alt="" />
+          </div>
+          <div class="sec3_buttoncolumn">
+            <button class="sec3_dialoguebutton">
+              <strong>
+                <p>ACTION</p>
+              </strong>
+            </button>
+            <button disabled style=" filter: saturate(0.0);" class="sec3_dialoguebutton" id="disabledNext" type="reset" onclick="window.location.href='http://127.0.0.1:5000/textgame/prologue/'">
+              <strong>
+                <p>NEXT</p>
+              </strong>
+            </button>
+          </div>
+        </div>
+      </span>
+    </section>
+  </main>
+  <footer>
+  CS STUDIO
+  </footer>
+  <script src="/script/create_character.js"></script>
+  <script src="/script/create_menu.js"></script>
+</body>
+</html>

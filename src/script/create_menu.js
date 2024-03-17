@@ -1,35 +1,35 @@
 let isLoggedin = false;
 
 const menuLinks = [
-  { text: "HOME", href: "/HOME" },
+  { text: "HOME", href: "http://127.0.0.1:5000/chat" },
   {
     text: "GAMES",
     href: "#",
     subLinks: [
-      { text: "Alchemist's Labyrinth", href: "/games/prologue.html" },
-      { text: "Errant Knight Online", href: "/games/ek_online.html" },
+      { text: "Alchemist's Labyrinth", href: "http://127.0.0.1:5000/textgame/prologue"},
+      { text: "Errant Knight Online", href: "ek_online.html" },
     ],
   },
   {
     text: "NEWS",
     href: "#",
     subLinks: [
-      { text: "Updates", href: "/news/updates.html" },
-      { text: "Releases", href: "/news/release.html" },
-      { text: "CS Studio", href: "/news/csstudios.html" },
+      { text: "Updates", href: "updates.html" },
+      { text: "Releases", href: "release.html" },
+      { text: "CS Studio", href: "csstudios.html" },
     ],
   },
   {
     text: "ACCOUNT",
     href: "#",
     subLinks: isLoggedin ? [
-      { text: "profile", href:"/account/profile.html"},
-      { text: "sign out", href:"/account/signout.html"},
+      { text: "profile", href:"profile.html"},
+      { text: "sign out", href:"signout.html"},
     ] 
     :  
     [    
-    { text: "login", href: "/account/login.html" },
-    { text: "register", href: "/account/register.html"},
+    { text: "login", href: "login.html" },
+    { text: "register", href: "register.html"},
   ],
   },
 ];
@@ -91,7 +91,7 @@ function rLab5() {
   // Add click event listener to the parent
   topMenuEl.addEventListener("click", function (event) {
     // Prevent default behavior
-    event.preventDefault();
+    //event.preventDefault();
     // Check if the clicked element is an <a> element
     if (event.target.tagName === "A") {
       const l_class = event.target.classList;
@@ -192,6 +192,8 @@ function deletechildrenEl() {
     subMenuEl.removeChild(subMenuEl.firstChild);
   }
 }
+
+
 
 aLab2();
 rLab3();
