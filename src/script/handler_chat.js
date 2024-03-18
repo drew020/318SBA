@@ -44,9 +44,10 @@ f_fetch.then(data => {
 const f_populate_chat = async () => {
     console.log(`f_populate_chat has STARTED.`)
 
-    for (let chat_item of v_data.chat) { 
-        f_appendChat(f_createChatItem(chat_item.username, chat_item.message));
-    }
+
+        for (let chat_item of v_data.chat) {
+            f_appendChat(f_createChatItem(chat_item.username, chat_item.message));
+        }
 
     console.log(`f_populate_chat has ENDED.`)
 }
@@ -67,32 +68,32 @@ function f_clear() {
     }
 }
 
-function addEvents() {
-      a_Attribute_Element[i].addEventListener('input', stepEventInput);
-      console.log(`${a_Attribute_Element[i]} stepEventinput listening`)
-  }
-  
-  addEvents();
-  
-  function stepEventInput(event) {
-    let l_index = 0;
-    event.preventDefault();
-    // Which attribute index is it?
-    for (let i = 0; i > a_Attribute_Element.length; i++) {
-      if (event.target === a_Attribute_Element[i]) {
-        l_index = i;
-      }
-      console.log(`Detected ${a_Attribute_Element[i]} change`);
-    }
-    if (f_point.value >= 0 && Number(sumAttribute()) <= 40) {
-      f_point.value = 40 - sumAttribute();
-    }
-  
-    else if (f_point.value == 0) {
-      event.target.value--
-    }
-    console.log(`input event on ${event.target}`)
-  }
+// function addEvents() {
+//     a_Attribute_Element[i].addEventListener('input', stepEventInput);
+//     console.log(`${a_Attribute_Element[i]} stepEventinput listening`)
+// }
+
+// addEvents();
+
+// function stepEventInput(event) {
+//     let l_index = 0;
+//     event.preventDefault();
+//     // Which attribute index is it?
+//     for (let i = 0; i > a_Attribute_Element.length; i++) {
+//         if (event.target === a_Attribute_Element[i]) {
+//             l_index = i;
+//         }
+//         console.log(`Detected ${a_Attribute_Element[i]} change`);
+//     }
+//     if (f_point.value >= 0 && Number(sumAttribute()) <= 40) {
+//         f_point.value = 40 - sumAttribute();
+//     }
+
+//     else if (f_point.value == 0) {
+//         event.target.value--
+//     }
+//     console.log(`input event on ${event.target}`)
+// }
 
 
 function f_appendChat(element) {

@@ -12,23 +12,6 @@ const v_hostname = '127.0.0.1';
 //set port or if undefined set to 5000
 const v_port = process.env.PORT || 5000;
 
-
-const v_users = [
-  {
-    Index: 0,
-    username: `Pragma`
-  }
-];
-
-const v_chat = [
-  {
-    username: "Pragma",
-    message: "Hi!"
-  }
-];
-
-
-
 //#reigon HTTP Module
 // const http = require('http');
 // const server = http.createServer((req, res) => {
@@ -43,9 +26,9 @@ const v_chat = [
 //#endregion
 
 //#region MIDDLEWARE
-
 v_app.use(v_express.json());
 v_app.use(v_express.static('src'));
+//v_app.use(v_express.Route())
 
 const f_logReq = function (req, res, next) {
   console.log("Request Received");
@@ -84,12 +67,36 @@ v_app.get(`/textgame/prologue`, (req, res) => {
   res.render(`prologue`);
 });
 
-v_app.get(`/api/`, (req, res) => {
-  const l_data = {
-    users: v_users,
-    chat: v_chat
+// v_app.get(`/api/`, (req, res) => {
+//   const l_data = {
+//     users:v_userRouter.v_users,
+//     chat: v_userRouter.v_chat
+//   }
+//   res.send( l_data);
+// });
+
+v_app.get('/api/', async (req, res) => {
+  try {
+    // Read the JSON file
+    const v_userData = await v_fs.readFile('users.json');
+    const v_chatData = await v_fs.readFile('chat.json');
+
+    // Parse the JSON data into a JavaScript object
+    const v_data = {
+     users: JSON.parse(v_userData),
+     chat: JSON.parse(v_chatData)
+  };
+
+    console.log(v_data);
+    
+    // Send the JSON data as the response
+    res.send(v_data);
+
+  } catch (error) {
+    // Handle errors (e.g., file not found, invalid JSON)
+    console.error('Error reading JSON file:', error);
+    res.status(500).send('Internal Server Error');
   }
-  res.send( l_data);
 });
 //#endregion
 
