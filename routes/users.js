@@ -95,7 +95,11 @@ v_router.delete(`/`, async (req, res) => {
     console.log(`4: find username match in v_data.user and store index in l_userID`);
     for (let i = 0; i < v_data.users.length; i++) {
 
-      if (req.body.username == v_data.users.username) {
+      console.log(v_data.users.username);
+
+    console.log(typeof v_data.users.username);
+
+      if (req.body.username == v_data.users[i].username) {
         l_userID = i;
         console.log(`5: Found username index match, stored in l_userID`);
       }
