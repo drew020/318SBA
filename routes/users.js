@@ -25,12 +25,10 @@ v_router.post(`/`, async (req, res) => {
     // Parse the JSON data into a JavaScript object
     const v_data = {
       users: JSON.parse(v_userData),
-      chat: JSON.parse(v_chatData)
     };
 
     console.log(`2: Files parsed and stored in v_data:`);
     console.log(v_data.users)
-    console.log(v_data.chat)
 
 
     if (req.body.username) {
@@ -71,6 +69,68 @@ v_router.post(`/`, async (req, res) => {
     // Handle errors (e.g., file not found, invalid JSON)
     console.error('Error reading JSON file:', error);
     res.status(500).send('Internal Server Error');
+  }
+});
+
+v_router.delete(`/`, async (req, res) => {
+  // Read the JSON file
+  const v_userData = await v_fs.readFile('users.json');
+  console.log(`0: Files read`);
+
+  // Parse the JSON data into a JavaScript object
+  const v_data = {
+    users: JSON.parse(v_userData),
+  };
+  console.log(`1: fil stored as array nested in object(v_data)`);
+
+  console.log(`2: Files parsed and stored in v_data:`);
+  console.log(v_data.users);
+
+
+  if (req.body.username) {
+
+    let l_userID;
+    console.log(`3: Created variable to store index of found username; default value is undefined`);
+
+    console.log(`4: find username match in v_data.user and store index in l_userID`);
+    for (let i = 0; i < v_data.users.length; i++) {
+
+      if (req.body.username == v_data.users.username) {
+        l_userID = i;
+        console.log(`5: Found username index match, stored in l_userID`);
+      }
+      break;
+    }
+
+    console.log(`6: attempting to delete username element`)
+    if (v_data.users.splice(l_userID, 1)) {
+      console.log(`7: deletion successful `)
+    }
+    else {
+      console.log(`7: deletion failed!!!!`)
+      res.status(500).send(`Failed to delete user`);
+    }
+
+    const jsonString = JSON.stringify(v_data.users, null, 2); // Optionally, pass null and 2 for pretty formatting
+    console.log(`8: stringified v_data.user`);
+    console.log(jsonString);
+  
+    if (await v_fs.writeFile('./users.json', jsonString)) {
+      console.log(`9: writen file`)
+
+      console.log(`10: file check`);
+  
+      const v_userData2 = await v_fs.readFile('users.json');
+    
+      console.log(JSON.parse(v_userData2));
+    
+      res.send(`user deleted: ${req.body.username}`);
+    }
+    else {
+      console.log(`9: failed to write file`)
+      res.status(500).send(`Failed to delete user on file`);
+      return;
+    }
   }
 });
 
