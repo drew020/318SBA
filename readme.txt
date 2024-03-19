@@ -1,3 +1,6 @@
+318SBA: api/user GET,POST,PUT,DELETE are functional.
+
+
 A player chat feature. 
 
 GET: Load current chat state.
