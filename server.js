@@ -108,13 +108,13 @@ v_app.get('/api/', async (req, res) => {
 
 v_app.listen(v_port, () => {
   console.log(`Express Server running at http://${v_hostname}:${v_port}/`);
-  console.log(`Express Server running at http://${v_hostname}:${v_port}/home`);
+  // console.log(`Express Server running at http://${v_hostname}:${v_port}/home`);
   console.log(`Express Server running at http://${v_hostname}:${v_port}/chat`);
   console.log(`Express Server running at http://${v_hostname}:${v_port}/textgame/create_character`);
   console.log(`Express Server running at http://${v_hostname}:${v_port}/textgame/prologue`);
   console.log(`Express Server running at http://${v_hostname}:${v_port}/api/`);
   console.log(`Express Server running at http://${v_hostname}:${v_port}/api/users/`);
-  console.log(`Express Server running at http://${v_hostname}:${v_port}/api/chat/`);
-  console.log(`Express Server running at http://${v_hostname}:${v_port}/api/characters/`);
+  // console.log(`Express Server running at http://${v_hostname}:${v_port}/api/chat/`);
+  // console.log(`Express Server running at http://${v_hostname}:${v_port}/api/characters/`);
 
 })
