@@ -7,6 +7,8 @@ const v_app = v_express();
 v_app.set(`view engine`,`ejs`);
 
 const v_userRouter = require(`./routes/users.js`);
+const v_chatRouter = require(`./routes/chat.js`);
+const v_charactersRouter = require(`./routes/characters.js`);
 
 const v_hostname = '127.0.0.1';
 //set port or if undefined set to 5000
@@ -47,6 +49,8 @@ v_app.use(v_cors(corsOptions));
 
 //External routes Link
 v_app.use("/api/users", v_userRouter)
+v_app.use("/api/chat", v_chatRouter)
+v_app.use("/api/character", v_charactersRouter)
 //#endregion
 
 
@@ -110,5 +114,7 @@ v_app.listen(v_port, () => {
   console.log(`Express Server running at http://${v_hostname}:${v_port}/textgame/prologue`);
   console.log(`Express Server running at http://${v_hostname}:${v_port}/api/`);
   console.log(`Express Server running at http://${v_hostname}:${v_port}/api/users/`);
+  console.log(`Express Server running at http://${v_hostname}:${v_port}/api/chat/`);
+  console.log(`Express Server running at http://${v_hostname}:${v_port}/api/characters/`);
 
 })
